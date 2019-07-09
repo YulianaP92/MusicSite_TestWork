@@ -20,5 +20,9 @@ namespace MusicSite.DAL.EF
                 .HasMany(p => p.Songs)
                 .WithRequired(p => p.Author);
         }
+
+        public System.Data.Entity.DbSet<MusicSite.WEB.Models.SongViewModel> SongViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<MusicSite.BLL.DTO.AuthorDto> AuthorDtoes { get; set; }
     }
 }

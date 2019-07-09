@@ -12,11 +12,11 @@ namespace MusicSite.DAL.Repositories
 {
     public class SongRepository : IRepository<Song>
     {
-        private SongContext db;
+        private readonly SongContext db;
 
-        public SongRepository(SongContext db)
+        public SongRepository()
         {
-            this.db = db;
+            db=new SongContext();
         }
         public Song Get(int id)
         {
