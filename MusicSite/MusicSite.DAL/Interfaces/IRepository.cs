@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MusicSite.DAL
+namespace MusicSite.DAL.Interfaces
 {
-    public class Class1
+    interface IRepository
     {
     }
 }
