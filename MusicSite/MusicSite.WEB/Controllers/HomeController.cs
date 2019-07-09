@@ -24,5 +24,24 @@ namespace MusicSite.WEB.Controllers
             var songViewModelList= Mapper.Map<List<SongDto>, List<SongViewModel>>(songDtoList);
             return View(songViewModelList);
         }
+
+        [HttpPost]
+        public ActionResult Search(string searchString)
+        {
+            //var userPageViewModel = CreateUserPageViewModel();
+
+            //if (userPageViewModel == null)
+            //{
+            //    return RedirectToAction("Index", "Home");
+            //}
+
+            var songs = songService.GetAll().ToList();
+            var songViewModelList = Mapper.Map<List<SongDto>, List<SongViewModel>>(songs);
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                songViewModelList = songViewModelList.Where(s => s.Name.ToUpper().Contains(searchString.ToUpper())).ToList();
+            }
+            return PartialView("MySongList", songViewModelList);
+        }
     }
 }

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MusicSite.WEB.Models.SongViewModel>
+@using (Ajax.BeginForm("Search", "Home",
+    new AjaxOptions
+    {
+        UpdateTargetId = "song",
+        HttpMethod = "POST"
+    }))
+{
+    <p>
+        @Html.TextBox("searchString")
+        <input type="submit" id="submit" name="submit" value="Search" />
+    </p>
+}
+<table class="table table-bordered">
+    <tr scope="row" class="table-active">
+        <th>Author</th>
+        <th>Song title</th>
+        <th>Genre</th>
+        <th>Date Posted</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr scope="row">
+            <td>
+                @Html.DisplayFor(model => item.Author.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostedOnSite)
+            </td>
+        </tr>
+    }
+</table>
+@section scripts{
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+}

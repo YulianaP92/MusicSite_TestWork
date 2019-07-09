@@ -5,30 +5,7 @@
 }
 
 <h2>Music Site</h2>
-<table class="table table-bordered">
-    <tr scope="row" class="table-active">
-        <th>Author</th>
-        <th>Song title</th>
-        <th>Genre</th>
-        <th> Date Posted</th>      
-    </tr>
+<div id="song">
+    @Html.Partial("MySongList")
+</div>
 
-    @foreach (var item in Model)
-    {
-        <tr scope="row">
-            <td>
-                @Html.DisplayFor(model => item.Author.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.Genre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PostedOnSite)
-            </td>
-        </tr>
-    }
-
-</table>
