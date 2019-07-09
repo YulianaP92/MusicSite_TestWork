@@ -6,6 +6,7 @@ using System.Web;
 using MusicSite.WEB.Models;
 using MusicSite.BLL.DTO;
 using MusicSite.DAL.Entities;
+using Profile = AutoMapper.Profile;
 
 namespace MusicSite.WEB.Infrastucture.MappingProfile
 {
