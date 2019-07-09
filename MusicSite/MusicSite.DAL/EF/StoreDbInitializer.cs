@@ -8,7 +8,7 @@ using MusicSite.DAL.Entities;
 
 namespace MusicSite.DAL.EF
 {
-    public class StoreDbInitializer : DropCreateDatabaseIfModelChanges<SongContext>
+    public class StoreDbInitializer : DropCreateDatabaseAlways<SongContext>
     {
         protected override void Seed(SongContext db)
         {
