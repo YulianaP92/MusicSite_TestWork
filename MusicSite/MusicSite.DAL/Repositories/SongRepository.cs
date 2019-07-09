@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using MusicSite.DAL.EF;
 using MusicSite.DAL.Entities;
 using MusicSite.DAL.Interfaces;
@@ -16,13 +11,12 @@ namespace MusicSite.DAL.Repositories
 
         public SongRepository()
         {
-            db=new SongContext();
+            db = new SongContext();
         }
         public Song Get(int id)
         {
             return db.Songs.Find(id);
         }
-
         public IEnumerable<Song> GetAll()
         {
             return db.Songs;

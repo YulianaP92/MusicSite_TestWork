@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using AutoMapper;
+﻿using AutoMapper;
 using MusicSite.WEB.Infrastucture.MappingProfile;
 
-namespace MusicSite.WEB.App_Start
+namespace MusicSite.WEB
 {
     public class AutoMapperConfig
     {

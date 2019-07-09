@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using AutoMapper;
-using MusicSite.BLL.DTO;
+﻿using MusicSite.BLL.DTO;
 using MusicSite.DAL.Entities;
 using MusicSite.WEB.Models;
 using Profile = AutoMapper.Profile;
@@ -14,31 +9,31 @@ namespace MusicSite.WEB.Infrastucture.MappingProfile
     {
         public AuthorMappingProfile()
         {
-            MapAuthorViewModelToAuthorDTO();
-            MapAuthorDTOToAuthorViewModel();
-            MapAuthorToAuthorDTO();
-            MapAuthorDTOToAuthor();
+            MapAuthorViewModelToAuthorDto();
+            MapAuthorDtoToAuthorViewModel();
+            MapAuthorToAuthorDto();
+            MapAuthorDtoToAuthor();
         }
-        private void MapAuthorViewModelToAuthorDTO()
+        private void MapAuthorViewModelToAuthorDto()
         {
             CreateMap<AuthorViewModel, AuthorDto>()
                 .ForMember(dest => dest.Id, c => c.MapFrom(src => src.Id))
                 .ForMember(dest => dest.Name, c => c.MapFrom(src => src.Name))
-                .ForMember(dest => dest.SongsDto, c => c.MapFrom(src => src.SongsDto))
+                .ForMember(dest => dest.SongsDto, c => c.MapFrom(src => src.Songs))
                 .ForAllOtherMembers(c => c.Ignore());
         }
-        private void MapAuthorDTOToAuthorViewModel()
+        private void MapAuthorDtoToAuthorViewModel()
         {
             CreateMap<AuthorDto, AuthorViewModel>()
                 .ForMember(dest => dest.Id, c => c.MapFrom(src => src.Id))
                 .ForMember(dest => dest.Name, c => c.MapFrom(src => src.Name))
-                .ForMember(dest => dest.SongsDto, c => c.MapFrom(src => src.SongsDto))
+                .ForMember(dest => dest.Songs, c => c.MapFrom(src => src.SongsDto))
                 .ForMember(dest => dest.Id, c => c.MapFrom(src => src.Id))
                 .ForMember(dest => dest.Name, c => c.MapFrom(src => src.Name))
                 .ForAllOtherMembers(c => c.Ignore());
         }
 
-        private void MapAuthorToAuthorDTO()
+        private void MapAuthorToAuthorDto()
         {
             CreateMap<Author, AuthorDto>()
                 .ForMember(dest => dest.Id, c => c.MapFrom(src => src.Id))
@@ -46,7 +41,7 @@ namespace MusicSite.WEB.Infrastucture.MappingProfile
                 .ForMember(dest => dest.SongsDto, c => c.MapFrom(src => src.Songs))              
                 .ForAllOtherMembers(c => c.Ignore());
         }
-        private void MapAuthorDTOToAuthor()
+        private void MapAuthorDtoToAuthor()
         {
             CreateMap<AuthorDto, Author>()
                 .ForMember(dest => dest.Songs, c => c.MapFrom(src => src.SongsDto))
