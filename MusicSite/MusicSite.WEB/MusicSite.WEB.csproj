@@ -140,6 +140,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastucture\MappingProfile\SongMappingProfile.cs" />
+    <Compile Include="Models\AuthorViewModel.cs" />
+    <Compile Include="Models\SongViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -181,7 +183,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -195,6 +196,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MusicSite.BLL\MusicSite.BLL.csproj">
+      <Project>{99b5e5ab-4aee-4763-afaf-5b79bcf36409}</Project>
+      <Name>MusicSite.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MusicSite.DAL\MusicSite.DAL.csproj">
+      <Project>{9C08323E-AC50-481D-A43E-D1ABABCF9977}</Project>
+      <Name>MusicSite.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
