@@ -139,6 +139,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastucture\MappingProfile\AuthorMappingProfile.cs" />
     <Compile Include="Infrastucture\MappingProfile\SongMappingProfile.cs" />
     <Compile Include="Models\AuthorViewModel.cs" />
     <Compile Include="Models\SongViewModel.cs" />
